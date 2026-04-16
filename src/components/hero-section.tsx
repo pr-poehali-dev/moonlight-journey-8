@@ -54,7 +54,7 @@ export function HeroSection({ onOpenForm }: HeroSectionProps) {
 
         <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto slide-up">
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#F5A623] font-display">5+</div>
+            <div className="text-3xl font-bold text-[#F5A623] font-display">12+</div>
             <div className="text-sm text-[#2E3A46]/60 mt-1">лет опыта</div>
           </div>
           <div className="text-center border-x border-gray-200">

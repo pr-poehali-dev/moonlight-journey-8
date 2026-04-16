@@ -99,7 +99,7 @@ export function ServicesSection() {
               title="Разовый запуск рекламы"
               subtitle="Полная настройка с нуля"
               items={setupItems}
-              price="30 000 ₽"
+              price="49 000 ₽"
               priceNote="единоразово"
             />
           </motion.div>
@@ -109,7 +109,7 @@ export function ServicesSection() {
               title="Ежемесячное ведение"
               subtitle="Оптимизация и развитие"
               items={managementItems}
-              price="30 000 ₽/мес"
+              price="49 000 ₽/мес"
               priceNote="оплата до начала нового месяца"
               highlight
             />
