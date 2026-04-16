@@ -5,6 +5,7 @@ const testimonials = [
   {
     name: "Алексей Смирнов",
     role: "Владелец строительной компании",
+    avatar: "https://cdn.poehali.dev/projects/7d06db7c-d3f6-4de7-8f51-00be9e755c3a/files/d7a45182-11f9-48cf-af7d-c5c93164b33b.jpg",
     initials: "АС",
     content:
       "За первый месяц сопровождения стоимость заявки снизилась с 4500 до 1800 рублей. Чёткая отчётность — вижу каждый шаг.",
@@ -12,6 +13,7 @@ const testimonials = [
   {
     name: "Марина Козлова",
     role: "Руководитель медицинской клиники",
+    avatar: "https://cdn.poehali.dev/projects/7d06db7c-d3f6-4de7-8f51-00be9e755c3a/files/bde306cb-c558-44c5-87c7-7c0eb024f690.jpg",
     initials: "МК",
     content:
       "Настроили рекламу за 5 дней. Первые звонки пошли в день запуска. Очень довольна прозрачностью работы.",
@@ -19,6 +21,7 @@ const testimonials = [
   {
     name: "Дмитрий Воронов",
     role: "Директор юридической фирмы",
+    avatar: "https://cdn.poehali.dev/projects/7d06db7c-d3f6-4de7-8f51-00be9e755c3a/files/2fd4c1a8-9552-4e33-8828-18f29f6dfa8c.jpg",
     initials: "ДВ",
     content:
       "Перешли от другого агентства — разница ощутимая. Реальные конверсии, а не просто красивые отчёты.",
@@ -51,9 +54,11 @@ export function TestimonialsSection() {
                 </div>
                 <p className="text-[#2E3A46]/80 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#FFCC00] rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-[#2E3A46] font-bold text-sm">{testimonial.initials}</span>
-                  </div>
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover flex-shrink-0 border-2 border-[#FFCC00]/30"
+                  />
                   <div>
                     <p className="font-semibold text-[#2E3A46]">{testimonial.name}</p>
                     <p className="text-sm text-[#2E3A46]/50">{testimonial.role}</p>
