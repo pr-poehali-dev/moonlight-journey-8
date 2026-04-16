@@ -17,7 +17,7 @@ export default function Index() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar onOpenForm={() => setFormOpen(true)} />
       <main>
         <HeroSection onOpenForm={() => setFormOpen(true)} />
         <FeaturesSection />

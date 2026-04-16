@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
 
-export function Navbar() {
+export function Navbar({ onOpenForm }: { onOpenForm?: () => void }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -30,7 +30,7 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <Button className="bg-[#FFCC00] hover:bg-[#F5A623] text-[#2E3A46] font-bold border-0 shadow-sm">
+            <Button onClick={onOpenForm} className="bg-[#FFCC00] hover:bg-[#F5A623] text-[#2E3A46] font-bold border-0 shadow-sm">
               Получить аудит
             </Button>
           </div>
@@ -70,7 +70,7 @@ export function Navbar() {
                 Вопросы
               </a>
               <div className="px-3 py-2">
-                <Button className="w-full bg-[#FFCC00] hover:bg-[#F5A623] text-[#2E3A46] font-bold border-0">
+                <Button onClick={onOpenForm} className="w-full bg-[#FFCC00] hover:bg-[#F5A623] text-[#2E3A46] font-bold border-0">
                   Получить аудит
                 </Button>
               </div>
