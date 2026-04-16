@@ -13,13 +13,13 @@ export function Footer() {
               Профессиональная настройка и ведение Яндекс.Директ. Приводим целевых клиентов из поиска и РСЯ.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/40 hover:text-[#FFCC00] transition-colors duration-200">
+              <a href="https://t.me/@atoyo" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#FFCC00] transition-colors duration-200">
                 <Icon name="Send" size={20} />
               </a>
-              <a href="#" className="text-white/40 hover:text-[#FFCC00] transition-colors duration-200">
+              <a href="https://wa.me/79111132764" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#FFCC00] transition-colors duration-200">
                 <Icon name="MessageCircle" size={20} />
               </a>
-              <a href="#" className="text-white/40 hover:text-[#FFCC00] transition-colors duration-200">
+              <a href="mailto:atoyo.vega@gmail.com" className="text-white/40 hover:text-[#FFCC00] transition-colors duration-200">
                 <Icon name="Mail" size={20} />
               </a>
             </div>
@@ -53,10 +53,22 @@ export function Footer() {
 
           <div>
             <h3 className="font-display text-white font-semibold mb-4">Контакты</h3>
-            <ul className="space-y-2">
-              <li className="text-white/50 text-sm">+7 (XXX) XXX-XX-XX</li>
-              <li className="text-white/50 text-sm">your@email.ru</li>
-              <li className="text-white/50 text-sm">вашсайт.рф</li>
+            <ul className="space-y-3">
+              <li>
+                <a href="tel:89111132764" className="text-white/50 hover:text-[#FFCC00] transition-colors text-sm">
+                  8-911-113-27-64
+                </a>
+              </li>
+              <li>
+                <a href="mailto:atoyo.vega@gmail.com" className="text-white/50 hover:text-[#FFCC00] transition-colors text-sm">
+                  atoyo.vega@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://creocamera.ru" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#FFCC00] transition-colors text-sm">
+                  Creocamera.ru
+                </a>
+              </li>
             </ul>
           </div>
         </div>

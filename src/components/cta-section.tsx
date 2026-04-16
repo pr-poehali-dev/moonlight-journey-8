@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
 
-export function CTASection() {
+interface CTASectionProps {
+  onOpenForm: () => void
+}
+
+export function CTASection({ onOpenForm }: CTASectionProps) {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="bg-[#2E3A46] rounded-3xl p-12 text-center relative overflow-hidden">
-          {/* Background decoration */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFCC00]/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#F5A623]/10 rounded-full blur-3xl" />
 
@@ -28,38 +31,44 @@ export function CTASection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
                 size="lg"
+                onClick={onOpenForm}
                 className="bg-[#FFCC00] hover:bg-[#F5A623] text-[#2E3A46] font-bold text-lg px-8 py-6 shadow-lg"
               >
-                <Icon name="Send" size={18} className="mr-2" />
-                Связаться в Telegram
+                <Icon name="Phone" size={18} className="mr-2" />
+                Оставить заявку
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 bg-transparent"
+              <a
+                href="https://t.me/@atoyo"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Icon name="Mail" size={18} className="mr-2" />
-                Написать на почту
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 bg-transparent w-full"
+                >
+                  <Icon name="Send" size={18} className="mr-2" />
+                  Написать в Telegram
+                </Button>
+              </a>
             </div>
 
-            {/* Contacts */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-white/10 pt-10">
-              <div className="flex flex-col items-center gap-2">
+              <a href="tel:89111132764" className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
                 <Icon name="Phone" size={20} className="text-[#FFCC00]" />
-                <span className="text-white font-semibold">+7 (XXX) XXX-XX-XX</span>
+                <span className="text-white font-semibold">8-911-113-27-64</span>
                 <span className="text-white/40 text-sm">Телефон</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
+              </a>
+              <a href="mailto:atoyo.vega@gmail.com" className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
                 <Icon name="Mail" size={20} className="text-[#FFCC00]" />
-                <span className="text-white font-semibold">your@email.ru</span>
+                <span className="text-white font-semibold">atoyo.vega@gmail.com</span>
                 <span className="text-white/40 text-sm">Email</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
+              </a>
+              <a href="https://creocamera.ru" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
                 <Icon name="Globe" size={20} className="text-[#FFCC00]" />
-                <span className="text-white font-semibold">вашсайт.рф</span>
+                <span className="text-white font-semibold">Creocamera.ru</span>
                 <span className="text-white/40 text-sm">Сайт</span>
-              </div>
+              </a>
             </div>
           </div>
         </div>
