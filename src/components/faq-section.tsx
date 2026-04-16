@@ -1,63 +1,65 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-export function FAQSection() {
-  const faqs = [
-    {
-      question: "Насколько безопасна процедура SynapseAI?",
-      answer:
-        "Да, процедура выполняется прецизионным хирургическим роботом и прошла обширное тестирование. Все материалы биосовместимы и одобрены FDA для медицинского применения.",
-    },
-    {
-      question: "Сколько длится операция?",
-      answer:
-        "Малоинвазивная процедура обычно занимает 2-3 часа и проводится под местной анестезией с седацией.",
-    },
-    {
-      question: "Можно ли удалить устройство?",
-      answer:
-        "Да, SynapseAI разработан полностью обратимым. Устройство можно безопасно удалить при необходимости, хотя это требуется редко.",
-    },
-    {
-      question: "Какие ощущения при использовании SynapseAI?",
-      answer:
-        "Пользователи отмечают, что управление устройствами силой мысли ощущается естественно и интуитивно после короткого периода обучения. От самого импланта нет физических ощущений.",
-    },
-    {
-      question: "Как долго работает батарея?",
-      answer:
-        "Устройство заряжается беспроводным способом и работает полный день на одном заряде. Зарядка выполняется внешним устройством, размещаемым рядом с головой.",
-    },
-    {
-      question: "Кто может получить SynapseAI?",
-      answer:
-        "В настоящее время мы фокусируемся на людях с тяжелым параличом. Соответствие определяется через комплексную медицинскую оценку.",
-    },
-  ]
+const faqs = [
+  {
+    question: "Сколько времени занимает настройка рекламы?",
+    answer:
+      "Стандартная настройка занимает 3–5 рабочих дней. За это время мы собираем семантику, пишем объявления, настраиваем кампании и метрику. В срочных случаях можем запустить быстрее.",
+  },
+  {
+    question: "Какой рекламный бюджет нужен для старта?",
+    answer:
+      "Минимальный эффективный бюджет зависит от ниши, но в среднем от 30 000 ₽/мес на рекламный бюджет. На созвоне обсудим вашу нишу и дадим конкретную рекомендацию.",
+  },
+  {
+    question: "Как я буду видеть результаты?",
+    answer:
+      "Все кампании ведутся в вашем рекламном кабинете — у вас всегда есть доступ. Ежемесячно предоставляем отчёт с ключевыми метриками: показы, клики, заявки, стоимость обращения.",
+  },
+  {
+    question: "Что входит в бесплатный аудит?",
+    answer:
+      "Проанализируем текущие кампании (если есть), найдём точки потерь бюджета, оценим конкурентов и предложим конкретные улучшения. Займёт 1–2 рабочих дня.",
+  },
+  {
+    question: "Можно ли совмещать настройку и ведение?",
+    answer:
+      "Да, многие клиенты начинают с разовой настройки, а затем переходят на ежемесячное ведение. Или сразу берём оба формата — настраиваем и сразу ведём.",
+  },
+  {
+    question: "Вы работаете только с Яндекс.Директ?",
+    answer:
+      "Основная специализация — Яндекс.Директ (поиск + РСЯ). Дополнительно предлагаем SEO, разработку сайтов и подключение аналитики — всё для комплексного роста.",
+  },
+]
 
+export function FAQSection() {
   return (
-    <section className="py-24 bg-black">
-      <div className="container mx-auto px-4">
+    <section className="py-24 px-6 bg-gray-50">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-orbitron">Частые вопросы</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-space-mono">
-            Ответы на популярные вопросы о технологии SynapseAI, безопасности и опыте пациентов.
+          <h2 className="text-4xl font-bold text-[#2E3A46] mb-4 font-display">Частые вопросы</h2>
+          <p className="text-xl text-[#2E3A46]/60 max-w-2xl mx-auto">
+            Ответы на популярные вопросы о нашей работе
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-red-500/20 mb-4">
-                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-red-400 font-orbitron px-6 py-4">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-300 leading-relaxed px-6 pb-4 font-space-mono">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        <Accordion type="single" collapsible className="w-full space-y-3">
+          {faqs.map((faq, index) => (
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="bg-white border border-gray-200 rounded-xl px-6 data-[state=open]:border-[#FFCC00]"
+            >
+              <AccordionTrigger className="text-[#2E3A46] font-semibold font-display text-left hover:no-underline hover:text-[#F5A623] py-5">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-[#2E3A46]/70 leading-relaxed pb-5">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </section>
   )
