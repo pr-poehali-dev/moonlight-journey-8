@@ -1,4 +1,6 @@
 import Icon from "@/components/ui/icon"
+import { AnimateOnScroll, AnimateStagger, staggerItem } from "@/components/animate-on-scroll"
+import { motion } from "framer-motion"
 
 const setupItems = [
   "Анализ конкурентов в выдаче",
@@ -42,7 +44,7 @@ function ServiceCard({
 }) {
   return (
     <div
-      className={`rounded-2xl border-2 p-8 slide-up flex flex-col ${
+      className={`rounded-2xl border-2 p-8 flex flex-col ${
         highlight
           ? "border-[#FFCC00] bg-white shadow-xl shadow-[#FFCC00]/20"
           : "border-gray-200 bg-white shadow-sm hover:border-[#FFCC00]/50 transition-colors"
@@ -83,32 +85,36 @@ export function ServicesSection() {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#2E3A46] mb-4 font-display">Наши услуги</h2>
           <p className="text-xl text-[#2E3A46]/60 max-w-2xl mx-auto">
             Выберите подходящий формат работы
           </p>
-        </div>
+        </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ServiceCard
-            icon="Settings"
-            title="Разовый запуск рекламы"
-            subtitle="Полная настройка с нуля"
-            items={setupItems}
-            price="30 000 ₽"
-            priceNote="единоразово"
-          />
-          <ServiceCard
-            icon="TrendingUp"
-            title="Ежемесячное ведение"
-            subtitle="Оптимизация и развитие"
-            items={managementItems}
-            price="30 000 ₽/мес"
-            priceNote="оплата до начала нового месяца"
-            highlight
-          />
-        </div>
+        <AnimateStagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div variants={staggerItem}>
+            <ServiceCard
+              icon="Settings"
+              title="Разовый запуск рекламы"
+              subtitle="Полная настройка с нуля"
+              items={setupItems}
+              price="30 000 ₽"
+              priceNote="единоразово"
+            />
+          </motion.div>
+          <motion.div variants={staggerItem}>
+            <ServiceCard
+              icon="TrendingUp"
+              title="Ежемесячное ведение"
+              subtitle="Оптимизация и развитие"
+              items={managementItems}
+              price="30 000 ₽/мес"
+              priceNote="оплата до начала нового месяца"
+              highlight
+            />
+          </motion.div>
+        </AnimateStagger>
       </div>
     </section>
   )

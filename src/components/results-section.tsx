@@ -1,4 +1,6 @@
 import Icon from "@/components/ui/icon"
+import { AnimateOnScroll, AnimateStagger, staggerItem } from "@/components/animate-on-scroll"
+import { motion } from "framer-motion"
 
 const results = [
   {
@@ -27,28 +29,28 @@ export function ResultsSection() {
   return (
     <section className="py-24 px-6 bg-[#2E3A46]">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4 font-display">Что вы получите в итоге?</h2>
           <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
             Результат нашей работы
           </p>
-        </div>
+        </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <AnimateStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {results.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white/10 border border-white/10 rounded-2xl p-6 hover:bg-white/15 transition-colors slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              variants={staggerItem}
+              className="bg-white/10 border border-white/10 rounded-2xl p-6 hover:bg-white/15 transition-colors"
             >
               <div className="w-12 h-12 bg-[#FFCC00]/20 rounded-xl flex items-center justify-center mb-4">
                 <Icon name={item.icon as "FileText"} size={24} className="text-[#FFCC00]" />
               </div>
               <h3 className="text-lg font-bold text-white mb-3 font-display">{item.title}</h3>
               <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </AnimateStagger>
       </div>
     </section>
   )
